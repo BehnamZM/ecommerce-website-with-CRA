@@ -1,0 +1,34 @@
+@import './font.css';
+
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  direction: rtl;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  font-family: vazir;
+  overflow-x: hidden;
+
+}
+
+:root {
+  --color-primary: #abd373;
+  --color-secondary: #333333;
+  --color-success: #cbffc0;
+  --color-light: #eee;
+  --box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+  --container-width-lg: 75%;
+  --container-width-md: 85%;
+  --container-width-sm: 95%;
+  --transition-element:all .3s ease;
+}

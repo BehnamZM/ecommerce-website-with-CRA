@@ -1,0 +1,393 @@
+nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  min-height: 100px;
+  width: 100vw;
+  padding: 1rem 0;
+  background-color: #ffffff;
+  box-shadow: var(--box-shadow);
+}
+
+/* when srollY is more than 200 => fixed class will be render */
+
+.fixed-nav{
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0;
+}
+
+nav.fixed-nav{
+  min-height: 50px;
+}
+
+
+nav .nav-part-one {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
+nav .nav-part-one .call-with-us {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 20px;
+}
+
+nav .nav-part-one .call-with-us>span {
+  direction: ltr;
+  cursor: pointer;
+  transition: var(--transition-element);
+}
+
+nav .nav-part-one .call-with-us>span:hover {
+  color: var(--color-primary);
+}
+
+nav .nav-part-one .call-with-us .call-icon {
+  background-color: var(--color-primary);
+  padding: 0.5rem;
+  border-radius: 3px;
+  color: #ffffff;
+}
+
+nav .nav-part-one .logo-part {
+  height: 90px;
+  width: 90px;
+  cursor: pointer;
+  margin-right: 2rem;
+}
+
+nav .nav-part-one .logo-part img {
+  width: 100%;
+  height: 100%;
+}
+
+
+nav .nav-part-one .icons-part {
+  display: flex;
+  gap: 1rem;
+}
+
+nav .nav-part-one .icons-part .menu-icon {
+  display: none;
+}
+
+nav .nav-part-one .icons-part .nav-icon {
+  margin-right: 12px;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: var(--transition-element);
+  color: var(--color-secondary);
+}
+
+nav .nav-part-one .icons-part .nav-icon:hover {
+  opacity: 0.5;
+}
+
+nav .nav-part-one .icons-part .nav-icon {
+  position: relative;
+  width: 25px;
+  height: 25px;
+}
+
+nav .nav-part-one .icons-part .nav-icon .icon {
+  width: 100%;
+  height: 100%;
+}
+
+nav .nav-part-one .icons-part .shopping-icon>span {
+  position: absolute;
+  padding: 2px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  top: -3px;
+  right: -3px;
+  width: 10px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+nav .navbar .close-icon {
+  display: none;
+}
+
+nav .navbar {
+  display: flex;
+  justify-content: center;
+}
+
+
+nav .navbar>ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav .navbar>ul li .submenu-icon {
+  display: none;
+}
+
+nav .navbar>ul>.product-link {
+  position: relative;
+}
+
+nav .navbar>ul li {
+  list-style: none;
+}
+
+nav .navbar>ul li a {
+  text-decoration: none;
+  color: #000;
+  transition: var(--transition-element);
+  font-size: large;
+}
+
+nav .navbar>ul li a:hover {
+  color: var(--color-primary);
+}
+
+
+.user-control{
+  position: relative;
+
+}
+
+.user-controler{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #000;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.user-control .user-control-dropdown{
+  position: absolute;
+  bottom: -700%;
+  right: -40%;
+  height: fit-content;
+  width: fit-content;
+  background-color: #eee;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 50;
+  transition: var(--transition-element);
+  text-align: center;
+}
+
+
+.profile-dropdown-show {
+  opacity: 1 !important;
+  visibility: visible !important;
+  bottom: -600% !important;
+}
+
+.user-control .user-control-dropdown .link {
+  color: #000;
+  text-decoration: none;
+}
+
+
+.user-control .user-control-dropdown ul{
+  padding: 0;
+}
+.user-control .user-control-dropdown ul li{
+  padding: .5rem 1rem;
+  border-bottom: 1px solid var(--color-primary);
+  list-style: none;
+  cursor:pointer;
+}
+
+
+
+
+
+
+.admin-control{
+  position: relative;
+
+}
+
+.admin-controler{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  color: #fff;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.admin-control .admin-control-dropdown{
+  position: absolute;
+  bottom: -800%;
+  right: -40%;
+  height: fit-content;
+  width: 150px;
+  background-color: #eee;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 50;
+  transition: var(--transition-element);
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+.profile-dropdown-show {
+  opacity: 1 !important;
+  visibility: visible !important;
+  bottom: -700% !important;
+}
+
+.admin-control .admin-control-dropdown .link {
+  color: #000;
+  text-decoration: none;
+}
+
+
+.admin-control .admin-control-dropdown ul{
+  padding: 0;
+}
+.admin-control .admin-control-dropdown ul li{
+  padding: .5rem 1rem;
+  border-bottom: 1px solid var(--color-primary);
+  list-style: none;
+  cursor:pointer;
+}
+
+
+
+
+
+
+
+
+
+@media (min-width:789px) {
+  .fixed-nav{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+  .fixed-nav .nav-part-one .call-with-us{
+    display: none;
+  }
+  
+}
+
+
+@media (max-width:788px) {
+  nav {
+    padding: 0;
+  }
+
+  nav .nav-part-one {
+    width: 100%;
+  }
+
+  nav .navbar {
+    position: fixed;
+    overflow-y: scroll;
+    background-color: #333333;
+    height: 100vh;
+    width: 90vw;
+    top: 0;
+    padding: 1rem;
+    overflow-x: hidden;
+    
+    color: #ffffff;
+  }
+
+  nav > .navbar {
+    transition: var(--transition-element);
+  }
+
+  nav .navbar .close-icon {
+    display: block;
+    font-size: 25px;
+    margin: 3rem 0;
+    cursor: pointer;
+  }
+
+  nav .hidden {
+    right: -100%;
+  }
+
+  nav .show {
+    right: 0;
+  }
+
+
+  nav .nav-part-one {
+    justify-content: space-around;
+  }
+
+  nav .navbar {
+    display: block;
+    z-index: 1000;
+  }
+
+  nav .navbar>ul {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  nav .nav-part-one .logo-part {
+    margin: 0;
+  }
+
+  nav .nav-part-one .icons-part {
+    gap: 0;
+  }
+
+  nav .nav-part-one .icons-part .search-icon {
+    display: none;
+  }
+
+  nav .nav-part-one .call-with-us {
+    display: none;
+  }
+
+  nav .nav-part-one .icons-part .menu-icon {
+    display: inline-block;
+  }
+
+  nav .navbar>ul li {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  nav .navbar>ul li .submenu-icon {
+    display: inline-block;
+  }
+
+  nav .navbar>ul li a {
+    color: #ffffff;
+  }
+
+  nav .navbar>ul .product-link {
+    flex: 50%;
+    flex-wrap: wrap;
+
+  }
+
+}

@@ -1,0 +1,75 @@
+.edit-profile {
+  min-height: 100vh;
+  background-color: var(--color-light);
+}
+
+.edit-profile .edit-profile-body {
+  display: grid;
+  width: 70%;
+  margin: 1rem auto;
+}
+
+.edit-profile-title{
+  text-align: center;
+}
+
+.edit-profile .edit-profile-body .auth-part {
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #ffffff;
+}
+
+.edit-profile .edit-profile-body .auth-part>h4 {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.edit-profile .edit-profile-body .auth-part label {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  font-weight: 300;
+}
+
+
+/* edit-profile part */
+
+.edit-profile .edit-profile-body .auth-part .edit-profile-name-part {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.edit-profile .edit-profile-body .auth-part .edit-profile-password-part {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 568px) {
+  .edit-profile .edit-profile-body {
+    grid-template-columns: 1fr;
+    margin-bottom: 2rem;
+  }
+
+  .edit-profile .edit-profile-body .auth-part {
+    padding: 10px;
+  }
+
+  .edit-profile .edit-profile-body .auth-part .edit-profile-name-part {
+    grid-template-columns: 1fr;
+  }
+
+  .edit-profile .edit-profile-body .auth-part .edit-profile-password-part {
+    grid-template-columns: 1fr;
+  }
+}
+
+  @media screen and (min-width: 569px) and (max-width: 800px) {
+    .edit-profile .edit-profile-body {
+      width: 90%;
+    }
+  }

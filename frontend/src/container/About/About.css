@@ -1,0 +1,20 @@
+
+.about-page{
+
+}
+
+.about-page .about-des{
+
+}
+
+.about-page .about-des > h2 {
+  font-size: 40px;
+  font-weight: 900;
+}
+.about-page .about-des  > h2 > .story-word {
+  color: var(--color-primary);
+}
+.about-page .about-des > p {
+  text-align: justify;
+  font-weight: 200;
+}

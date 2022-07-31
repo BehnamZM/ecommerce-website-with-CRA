@@ -1,0 +1,53 @@
+.select-payment .checkout-steps .checkout-progress {
+  width: 63%;
+}
+
+.payment-body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+}
+
+.payment-body > form {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment-body label{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 15px;
+  line-height: 32px;
+  font-weight: 900;
+}
+
+.payment-body label p{
+  margin: 0;
+}
+
+
+.payment-body input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  border: 2px solid var(--color-secondary);
+  transition: 0.2s all linear;
+  margin-right: 5px;
+  position: relative;
+  top: 4px;
+  cursor: pointer;
+}
+
+.payment-body input:checked {
+  border: 10px solid var(--color-secondary);
+}
+

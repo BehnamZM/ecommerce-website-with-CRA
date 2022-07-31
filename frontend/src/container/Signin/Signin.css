@@ -1,0 +1,92 @@
+.login-register {
+  min-height: 100vh;
+  background-color: var(--color-light);
+}
+
+.login .login-body {
+  width: 60%;
+  margin: 1rem auto;
+}
+
+
+.login .login-body .auth-part {
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #ffffff;
+}
+.login .login-body .auth-part .forget-password-massage {
+  font-size: 12px;
+  cursor: pointer;
+  transition: var(--transition-element);
+}
+
+.login .login-body .auth-part .forget-password-massage:hover {
+  color: var(--color-primary);
+}
+
+/* login part */
+
+.login .login-body .auth-part .remember-checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 12px;
+}
+
+.login .login-body .auth-part .login-massages {
+  display: grid;
+  grid-template-columns: 1rem;
+  gap: 1rem;
+}
+
+.login .login-body .auth-part {
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #ffffff;
+}
+
+.login .login-body .auth-part>h4 {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.login .login-body .auth-part label {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  font-weight: 300;
+}
+
+
+
+
+@media screen and (max-width: 568px) {
+  .login .login-body {
+    width: 90%;
+  }
+
+  .login .login-body .auth-part {
+    padding: 10px;
+  }
+
+  .login .login-body .auth-part .register-name-part {
+    grid-template-columns: 1fr;
+  }
+
+  .login .login-body .auth-part .register-password-part {
+    grid-template-columns: 1fr;
+  }
+}
+
+  @media screen and (min-width: 569px) and (max-width: 800px) {
+    .login .login-body {
+      grid-template-columns: 1fr;
+      margin-bottom: 2rem;
+    }
+  }

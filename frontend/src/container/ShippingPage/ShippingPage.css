@@ -1,0 +1,22 @@
+
+
+.shipping-page{
+  background-color: var(--color-light);
+}
+
+.shipping-form{
+  width: 50%;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.shipping-form label{
+  display: flex;
+  flex-direction: column;
+}
+
+.shipping-page .checkout-steps .checkout-progress {
+  width: 30%;
+}

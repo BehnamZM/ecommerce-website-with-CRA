@@ -1,0 +1,38 @@
+.edit-product {
+  min-height: 100vh;
+  background-color: var(--color-light);
+}
+
+
+.edit-product-title{
+  text-align: center;
+}
+
+.edit-product .edit-product-body {
+  display: grid;
+  width: 70%;
+  margin: 1rem auto;
+}
+
+.edit-product .edit-product-body form {
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #ffffff;
+}
+
+.edit-product .edit-product-body form label{
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 568px) {
+
+  .register .register-body form {
+    padding: 10px;
+  }
+}

@@ -1,0 +1,24 @@
+
+.tabmenu-products{
+  min-height: 100vh;
+}
+
+
+.tabmenu-products .products{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 568px){
+  .tabmenu-products .products{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 569px) and (max-width: 800px){
+  .tabmenu-products .products{
+    grid-template-columns: 1fr 1fr;
+  }
+}

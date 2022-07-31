@@ -1,0 +1,25 @@
+
+
+.images-box{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.images-box > .img-container {
+  height: 200px;
+}
+
+
+@media screen and (max-width: 568px){
+  .images-box{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 569px) and (max-width: 800px){
+  .images-box{
+    grid-template-columns: 1fr 1fr;
+  }
+}

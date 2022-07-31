@@ -1,0 +1,33 @@
+
+
+.checkout-steps{
+  width: 50%;
+  margin: 2rem auto;
+  height: 5px;
+  background-color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.checkout-steps > div {
+  background-color: var(--color-secondary);
+  padding: 1rem;
+  border-radius: 50%;
+  color: #fff;
+  z-index: 1;
+
+}
+
+.checkout-steps > .active {
+  background-color: var(--color-primary);
+}
+
+.checkout-steps .checkout-progress{
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background-color: var(--color-primary);
+  z-index: 0;
+}

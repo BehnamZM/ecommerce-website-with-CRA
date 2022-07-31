@@ -1,0 +1,124 @@
+
+
+footer {
+  background-color: var(--color-success);
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 2rem;
+}
+
+footer .footer-body{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: 2rem;
+  align-items: center;
+  height: 50%;
+}
+
+footer .footer-body .website-infos{
+
+}
+
+footer .footer-body .website-infos .footer-logo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer .footer-body .website-infos .footer-logo > p{
+  text-align: justify;
+}
+
+footer .footer-body .website-infos .footer-logo img{
+  width: 120px;
+  height: 120px;
+
+}
+
+footer .footer-body .website-infos .socials{
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  
+}
+
+footer .footer-body .website-infos .socials .social{
+  padding: 0.4rem;
+  border: 1px solid #000;
+  transition: var(--transition-element);
+}
+
+footer .footer-body .website-infos .socials .social:hover{
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+footer .footer-body .useful-links{
+  display: flex;
+  flex-direction: column;
+}
+
+footer .footer-body .useful-links .useful-link {
+  color: #000;
+  text-decoration: none;
+}
+
+footer .footer-body .my-account{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+footer .footer-body .my-account .my-account-link {
+  color: #000;
+  text-decoration: none;
+}
+
+footer .footer-body .our-services{
+
+}
+
+footer .footer-body .our-services > .footer-services-items{
+  padding: 0;
+}
+
+footer .footer-body .our-services .footer-services-items .footer-services-item{
+  list-style: none;
+}
+
+footer .footer-body .footer-contact > h4{
+  direction: ltr;
+  text-align: end;
+}
+
+footer .copyright {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 568px){
+  footer .footer-body{
+    grid-template-columns: 1fr;
+  }
+
+  footer .footer-body .website-infos .socials{
+    justify-content: center;
+    gap: 1rem;
+    
+  }
+}
+
+@media screen and (min-width: 569px) and (max-width: 800px){
+  footer .footer-body{
+    grid-template-columns: 1fr 1fr 1fr;
+  } 
+
+  footer .footer-body .website-infos .socials{
+    justify-content: center; 
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,75 @@
+.register {
+  min-height: 100vh;
+  background-color: var(--color-light);
+}
+
+.register .register-body {
+  display: grid;
+  width: 70%;
+  margin: 1rem auto;
+}
+
+.signup-title{
+  text-align: center;
+}
+
+.register .register-body .auth-part {
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #ffffff;
+}
+
+.register .register-body .auth-part>h4 {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.register .register-body .auth-part label {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  font-weight: 300;
+}
+
+
+/* register part */
+
+.register .register-body .auth-part .register-name-part {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.register .register-body .auth-part .register-password-part {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 568px) {
+  .register .register-body {
+    grid-template-columns: 1fr;
+    margin-bottom: 2rem;
+  }
+
+  .register .register-body .auth-part {
+    padding: 10px;
+  }
+
+  .register .register-body .auth-part .register-name-part {
+    grid-template-columns: 1fr;
+  }
+
+  .register .register-body .auth-part .register-password-part {
+    grid-template-columns: 1fr;
+  }
+}
+
+  @media screen and (min-width: 569px) and (max-width: 800px) {
+    .register .register-body {
+      width: 90%;
+    }
+  }
