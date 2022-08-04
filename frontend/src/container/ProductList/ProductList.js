@@ -184,9 +184,10 @@ function ProductList() {
 
                 </tbody>
               </table>
-              <div>
+
+              <div className='pagination'>
                 {[...Array(pages).keys()].map((x) => (
-                  <Link
+                  <Link className= 'pagination-item'
                     key={x + 1}
                     to={`/admin/products?page=${x + 1}`}
                   >

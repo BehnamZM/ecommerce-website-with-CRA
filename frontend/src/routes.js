@@ -19,6 +19,7 @@ import UserList from './container/UserList/UserList'
 import UserEdit from './container/UserEdit/UserEdit'
 import ProductList from './container/ProductList/ProductList'
 import ProductEdit from './container/ProductEdit/ProductEdit'
+import SearchScreen from './container/SearchScreen/SearchScreen'
 
 
 
@@ -32,6 +33,7 @@ let routes = [
   { path: '/cart', element: <CartPage /> },
   { path: '/shipping', element: <ShippingPage /> },
   { path: '/payment', element: <SelectPayment /> },
+  { path: '/search', element: <SearchScreen /> },
   
   { path: '/admin/dashboard', element: <AdminRoute><DashboardAdmin /></AdminRoute> },
   { path: '/admin/users-list', element: <AdminRoute><UserList /></AdminRoute> },

@@ -175,7 +175,7 @@ nav .navbar>ul li a:hover {
 
 .user-control .user-control-dropdown{
   position: absolute;
-  bottom: -700%;
+  bottom: -800%;
   right: -40%;
   height: fit-content;
   width: fit-content;
@@ -189,7 +189,7 @@ nav .navbar>ul li a:hover {
 }
 
 
-.profile-dropdown-show {
+.user-dropdown-show {
   opacity: 1 !important;
   visibility: visible !important;
   bottom: -600% !important;
@@ -252,7 +252,7 @@ nav .navbar>ul li a:hover {
 }
 
 
-.profile-dropdown-show {
+.admin-dropdown-show {
   opacity: 1 !important;
   visibility: visible !important;
   bottom: -700% !important;

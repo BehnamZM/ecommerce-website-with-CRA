@@ -74,7 +74,7 @@ function UserList() {
         dispatch({ type: 'FETCH_SUCCESS', payload: data })
 
       } catch (err) {
-        dispatch({ type: 'FETCH_FAIL', payload: error.message })
+        dispatch({ type: 'FETCH_FAIL', payload: err.message })
         alert(err.message)
       }
     }

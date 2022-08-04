@@ -17,11 +17,11 @@ const data = {
   products: [
     {
       //_id: 0,
-      name: "1سانسوریا",
+      name: "سانسوریا گلدان فلزی",
       slug: "sanseveria1",
       image: "/images/sanseveria(1).jpg",
       category: "آپارتمانی",
-      price: 390000,
+      price: 990000,
       countInStock: 5,
       brand: "pronia",
       rating: 4.3,
@@ -29,75 +29,18 @@ const data = {
       description: "گیاه سانسوریا جزو زیباترین و در عین حال مقاوم ترین نوع گیاهان آپارتمانی محسوب میشود و شما عزیزان هم اکنون میتوانید این گیاه را از سایت پرونیا تهیه کنید.",
       images: [
         '/images/sanseveria(1).jpg',
-        '/images/sanseveria(2).jpg',
+        '/images/sanseveria(7).jpg',
         '/images/sanseveria(6).jpg',
-        '/images/sanseveria(5).jpg',
       ]
     },
-    {
-      //_id: 1,
-      name: "2سانسوریا",
-      slug: "sanseveria2",
-      image: "/images/sanseveria(2).jpg",
-      category: "آپارتمانی",
-      price: 420000,
-      countInStock: 2,
-      brand: "pronia",
-      rating: 4.4,
-      numReviews: 6,
-      description: "گیاه سانسوریا جزو زیباترین و در عین حال مقاوم ترین نوع گیاهان آپارتمانی محسوب میشود و شما عزیزان هم اکنون میتوانید این گیاه را از سایت پرونیا تهیه کنید.",
-      images: [
-        '/images/sanseveria(1).jpg',
-        '/images/sanseveria(2).jpg',
-        '/images/sanseveria(6).jpg',
-        '/images/sanseveria(5).jpg',
-      ]
-    },
-    {
-      //_id: 2,
-      name: "سانسوریا3",
-      slug: "sanseveria3",
-      image:  "/images/sanseveria(5).jpg",
-      category: "آپارتمانی",
-      price: 340000,
-      countInStock: 1,
-      brand: "pronia",
-      rating: 4.1,
-      numReviews: 1,
-      description: "گیاه سانسوریا جزو زیباترین و در عین حال مقاوم ترین نوع گیاهان آپارتمانی محسوب میشود و شما عزیزان هم اکنون میتوانید این گیاه را از سایت پرونیا تهیه کنید.",
-      images: [
-        '/images/sanseveria(1).jpg',
-        '/images/sanseveria(2).jpg',
-        '/images/sanseveria(6).jpg',
-        '/images/sanseveria(5).jpg',
-      ]
-    },
-    {
-      //_id: 3,
-      name: "سانسوریا4",
-      slug: "sanseveria4",
-      image: "/images/sanseveria(6).jpg",
-      category: "آپارتمانی",
-      price: 560000,
-      countInStock: 0,
-      brand: "pronia",
-      rating: 3.9,
-      numReviews: 7,
-      description: "گیاه سانسوریا جزو زیباترین و در عین حال مقاوم ترین نوع گیاهان آپارتمانی محسوب میشود و شما عزیزان هم اکنون میتوانید این گیاه را از سایت پرونیا تهیه کنید.",
-      images: [
-        '/images/sanseveria(1).jpg',
-        '/images/sanseveria(2).jpg',
-        '/images/sanseveria(6).jpg',
-        '/images/sanseveria(5).jpg',
-      ]
-    },
+
     {
       //_id: 4,
-      name: "سانسوریا5",
+      name: "سانسوریا گلدان سنگی",
       slug: "sanseveria5",
       image: "/images/sanseveria(7).jpg",
       category: "آپارتمانی",
-      price: 290000,
+      price: 1290000,
       countInStock: 3,
       brand: "pronia",
       rating: 4,      
@@ -105,51 +48,31 @@ const data = {
       description:"یاه سانسوریا جزو زیباترین و در عین حال مقاوم ترین نوع گیاهان آپارتمانی محسوب میشود و شما عزیزان هم اکنون میتوانید این گیاه را از سایت پرونیا تهیه کید.",
       images: [
         '/images/sanseveria(1).jpg',
-        '/images/sanseveria(2).jpg',
+        '/images/sanseveria(7).jpg',
         '/images/sanseveria(6).jpg',
-        '/images/sanseveria(5).jpg',
-      ]
-    },    {
-      //_id: 5,
-      name: "سانسوریا6",
-      slug: "sanseveria6",
-      image: "/images/sanseveria(8).png",
-      category: "آپارتمانی",
-      price: 400000,
-      countInStock: 3,
-      brand: "pronia",
-      rating: 3.8,
-      numReviews: 1,
-      description: "گیاه سانسوریا جزو زیباترین و در عین حال مقاوم ترین نوع گیاهان آپارتمانی محسوب میشود و شما عزیزان هم اکنون میتوانید این گیاه را از سایت پرونیا تهیه کنید.",
-      images: [
-        '/images/sanseveria(1).jpg',
-        '/images/sanseveria(2).jpg',
-        '/images/sanseveria(6).jpg',
-        '/images/sanseveria(5).jpg',
       ]
     },
+
     {
       //_id: 6,
-      name: "بنجامین",
+      name: "درخت بنجامین",
       slug: "benjamin1",
       image: "/images/benjamin1.jpg",
       category: "آپارتمانی",
-      price: 790000,
+      price: 2100000,
       countInStock: 5,
       brand: "pronia",
       rating: 4.2,
       numReviews: 5,
       description: "گیاه بنجامین جزو زیباترین و در عین حال مقاوم ترین نوع گیاهان آپارتمانی محسوب میشود و شما عزیزان هم اکنون میتوانید این گیاه را از سایت پرونیا تهیه کنید.",
       images: [
-        '/images/sanseveria(1).jpg',
-        '/images/sanseveria(2).jpg',
-        '/images/sanseveria(6).jpg',
-        '/images/sanseveria(5).jpg',
+        '/images/benjamin1.jpg',
+        '/images/benjamin2.jpg',
       ]
     },
     {
       //_id: 7,
-      name: "بنجامین2",
+      name: "بنجامین بافته شده",
       slug: "benjamin8",
       image: "/images/benjamin2.png",
       category: "آپارتمانی",
@@ -160,10 +83,8 @@ const data = {
       numReviews: 3,
       description: "گیاه بنجامین جزو زیباترین و در عین حال مقاوم ترین نوع گیاهان آپارتمانی محسوب میشود و شما عزیزان هم اکنون میتوانید این گیاه را از سایت پرونیا تهیه کنید.",
       images: [
-        '/images/sanseveria(1).jpg',
-        '/images/sanseveria(2).jpg',
-        '/images/sanseveria(6).jpg',
-        '/images/sanseveria(5).jpg',
+        '/images/benjamin1.jpg',
+        '/images/benjamin2.jpg',
       ]
     },
     {
@@ -179,10 +100,7 @@ const data = {
       numReviews: 2,
       description: "گیاه آدنیوم جزو زیباترین و در عین حال مقاوم ترین نوع گیاهان آپارتمانی محسوب میشود و شما عزیزان هم اکنون میتوانید این گیاه را از سایت پرونیا تهیه کنید.",
       images: [
-        '/images/sanseveria(1).jpg',
-        '/images/sanseveria(2).jpg',
-        '/images/sanseveria(6).jpg',
-        '/images/sanseveria(5).jpg',
+        "/images/adeniom.jpg",
       ]
     },
     {
@@ -199,8 +117,6 @@ const data = {
       description: "بیلچه یکی از ابزار های لازم برای هر کشاورز است و ما به شما یکی از با کیفیت ترین بیلچه های موجود در بازار را معرفی میکنیم",
       images: [
         '/images/shovel1.jpg',
-        '/images/shovel2.jpg',
-        '/images/shovel3.jpg',
       ]
     },
     {
@@ -285,7 +201,7 @@ const data = {
     },
     {
       //_id: 9,
-      name: "گلدان شماره 1",
+      name: "گلدان فلزی",
       slug: "pot1",
       image: "/images/pot2.jpg",
       category: "بستر کشت",
@@ -301,7 +217,7 @@ const data = {
     },
     {
       //_id: 9,
-      name: "گلدان شماره 2",
+      name: "گلدان آبی",
       slug: "pot2",
       image: "/images/pot3.jpg",
       category: "بستر کشت",
@@ -349,7 +265,7 @@ const data = {
     },
     {
       //_id: 9,
-      name: "ورمی کمپوست شماره1",
+      name: "ورمی کمپوست",
       slug: "vermicompost1",
       image: "/images/vermicompost.jpg",
       category: "کود و سموم",
@@ -363,22 +279,7 @@ const data = {
         '/images/vermicompost.jpg',
       ]
     },
-    {
-      //_id: 9,
-      name: "ورمی کمپوست شماره2",
-      slug: "vermicompost2",
-      image: "/images/vermicompost2.jpg",
-      category: "کود و سموم",
-      price: 123000,
-      countInStock: 4,
-      brand: "Fertilizer",
-      rating: 4.9,
-      numReviews: 2,
-      description: "ورمی کمپوست یکی از بهترین گزینه ها برای بهبود عملکرد گیاه شماست",
-      images: [
-        '/images/vermicompost2.jpg',
-      ]
-    },
+
     {
       //_id: 9,
       name: "سم قارچکش بردو",

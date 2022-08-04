@@ -62,7 +62,13 @@ function Nav() {
     }
   }
 
+  const closeDropdownHandler = () => {
+    setShowDropUser(false)
+    setShowDropAdmin(false)
+  }
+
   window.addEventListener('scroll', changeBackground)
+  window.addEventListener('click', closeDropdownHandler)
 
 
 
@@ -91,7 +97,7 @@ function Nav() {
                         {userInfo.name.slice(0, 1)}
                       </div>
                       <div
-                        className={`${showDropUser ? 'profile-dropdown-show' : ''} user-control-dropdown`}>
+                        className={`${showDropUser ? 'user-dropdown-show' : ''} user-control-dropdown`}>
                         <ul>
                           <li onClick={() => setShowDropUser(false)}>
                             <Link to='/user-profile' className='link'>پروفایل</Link>
@@ -120,7 +126,7 @@ function Nav() {
                         {userInfo.name.slice(0, 1)}
                       </div>
                       <div
-                        className={`${showDropAdmin ? 'profile-dropdown-show' : ''} admin-control-dropdown`}>
+                        className={`${showDropAdmin ? 'admin-dropdown-show' : ''} admin-control-dropdown`}>
                         <ul>
                           <li onClick={() => setShowDropAdmin(false)}>
                             <Link to='/admin/dashboard' className='link'>داشبورد مدیریت</Link>
@@ -179,7 +185,7 @@ function Nav() {
                 </ul>
               </div>
               <div className="logo-part">
-                <img src={logo} />
+                <img src={logo} alt='logoImage'/>
               </div>
             </div>
           </nav>
@@ -204,7 +210,7 @@ function Nav() {
                         {userInfo.name.slice(0, 1)}
                       </div>
                       <div
-                        className={`${showDropUser ? 'profile-dropdown-show' : ''} user-control-dropdown`}>
+                        className={`${showDropUser ? 'user-dropdown-show' : ''} user-control-dropdown`}>
                         <ul>
                           <li onClick={() => setShowDropUser(false)}>
                             <Link to='/user-profile' className='link'>پروفایل</Link>
@@ -233,7 +239,7 @@ function Nav() {
                         {userInfo.name.slice(0, 1)}
                       </div>
                       <div
-                        className={`${showDropAdmin ? 'profile-dropdown-show' : ''} admin-control-dropdown`}>
+                        className={`${showDropAdmin ? 'admin-dropdown-show' : ''} admin-control-dropdown`}>
                         <ul>
                           <li onClick={() => setShowDropAdmin(false)}>
                             <Link to='/admin/dashboard' className='link'>داشبورد مدیریت</Link>
@@ -257,7 +263,7 @@ function Nav() {
                 </div>
               </div>
               <div className="logo-part">
-                <img src={logo} />
+                <img src={logo} alt='logoImage'/>
               </div>
               <div className="call-with-us">
                 <span>+98 9201236547</span>

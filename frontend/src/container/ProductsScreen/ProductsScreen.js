@@ -44,9 +44,10 @@ function ProductsScreen() {
       try {
         const result = await axios.get('/api/products')
         dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
+        let newData = result.data.reverse(result.data)
         let endIndex = pageSize * currentPage
         let startIndex = endIndex - pageSize
-        let allShownProducts = result.data.slice(startIndex, endIndex)
+        let allShownProducts = newData.slice(startIndex, endIndex)
         setPaginatedProducts(allShownProducts)
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: err.message });

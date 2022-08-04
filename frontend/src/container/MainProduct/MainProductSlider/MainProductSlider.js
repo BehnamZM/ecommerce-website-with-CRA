@@ -36,7 +36,7 @@ function MainProductSlider(props) {
           {
             props.img.map(item => (
               <SwiperSlide>
-                <img src={item} />
+                <img src={item} alt={item.name} />
               </SwiperSlide>
             ))
           }

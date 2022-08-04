@@ -37,9 +37,13 @@
 }
 
 .login .login-body .auth-part .login-massages {
-  display: grid;
-  grid-template-columns: 1rem;
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.login .login-body .auth-part .login-massages > p,Link,label {
+  width: 100%;
 }
 
 .login .login-body .auth-part {
