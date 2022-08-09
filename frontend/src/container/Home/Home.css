@@ -13,7 +13,6 @@
 
 }
 
-
 .images-box{
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -27,6 +26,17 @@
 
 .images-box > .img-container {
   height: 200px;
+}
+
+/* product style in newest products */
+
+.newest-products-list .product .product-inner .product-img{
+  width: 100%;
+  height: 200px; 
+}
+
+.newest-products-list .product .product-inner {
+  flex-direction: column;
 }
 
 

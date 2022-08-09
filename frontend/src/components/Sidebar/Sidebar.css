@@ -12,6 +12,11 @@
   width: 70%;
 }
 
+.aside-inner .button-style{
+  text-align: center;
+  margin: 1rem 0; 
+}
+
 .aside-inner .products-searchbox .search-in-products-icon{
   position: absolute;
   left: 20%;

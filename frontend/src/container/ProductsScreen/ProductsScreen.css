@@ -44,9 +44,15 @@
 }
 
 
-.products .products-body .products-inner .products-list{
+.products .products-body .products-inner .products-list-one{
   display: grid;
   grid-template-columns: repeat(3,1fr);
+  gap: 1rem;
+}
+
+.products .products-body .products-inner .products-list-two{
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1rem;
 }
 

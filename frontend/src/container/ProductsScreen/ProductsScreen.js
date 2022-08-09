@@ -8,6 +8,8 @@ import ProductStyle from '../../components/ProductStyle/ProductStyle'
 import axios from 'axios'
 import logger from 'use-reducer-logger'
 import Preload from '../../components/Preload/Preload'
+import { Link } from 'react-router-dom'
+import ButtonStyle from '../../components/ButtonStyle/ButtonStyle'
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -24,7 +26,7 @@ const reducer = (state, action) => {
 
 
 function ProductsScreen() {
-
+  const [listType,setListType] = useState(true)
   const [currentPage, setCurrentPage] = useState(1)
   const [paginatedProducts, setPaginatedProducts] = useState([])
   let pageSize = 6
@@ -81,27 +83,22 @@ function ProductsScreen() {
         <div className="products-inner">
           <div className="products-controls">
             <div className="show-products-Horizontal">
-              <CgMenuGridR />
+              <CgMenuGridR onClick={() => setListType(true)} />
             </div>
             <div className="show-products-vertical">
-              <FaThList />
+              <FaThList onClick={() => setListType(false)} />
             </div>
             <div className="number-of-products">
               9 محصول از 30 تا
             </div>
-            <select className="sort-products">
-              <option value='newest'>جدیدترین ها</option>
-              <option value='highest'>ارزانترین ها</option>
-              <option value='lowest'>گرانترین ها</option>
-              <option value='toprated'>پیشنهاد خریداران</option>
-            </select>
+            
           </div>
-          <div className="products-list">
+          <div className={listType ? "products-list-one" : "products-list-two"}>
             {
               loading ? <Preload /> :
                 error ? (<h3>{error}</h3>) : (
                   paginatedProducts.map(product => (
-                    <ProductStyle {...product} key={product._id} />)
+                    <ProductStyle type={listType} {...product} key={product._id} />)
                   ))
             }
           </div>

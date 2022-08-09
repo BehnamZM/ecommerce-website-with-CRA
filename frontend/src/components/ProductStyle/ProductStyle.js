@@ -29,8 +29,8 @@ function ProductStyle(props) {
 
   return (
     <>
-      <div className="product">
-        <div className="product-inner">
+      <div className={props.type ? "product-one product" : "product product-two"}>
+        <div className={props.type ? "product-inner product-inner-one" : "product-inner product-inner-two"}>
           <div className="product-img">
             <img src={props.image} alt={props.slug} />
             <div className="product-controls">

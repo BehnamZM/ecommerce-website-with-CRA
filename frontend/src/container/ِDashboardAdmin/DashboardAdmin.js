@@ -72,7 +72,7 @@ function DashboardAdmin() {
             <li><Link to="/signin" onClick={signoutHandler}>خروج</Link></li>
           </ul>
         </div>
-        <div className="website-infos">
+        <div className="website-summery-infos">
           <div className="users-length" style={{ backgroundColor: '#b1b0f5' }}>
             <h3>تعداد کاربران:</h3>
             <h5>43 نفر</h5>

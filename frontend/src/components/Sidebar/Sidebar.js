@@ -7,11 +7,12 @@ import { IoIosArrowBack } from 'react-icons/io'
 import imgSrc from '../../assets/sanseveria(8).png'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
+import ButtonStyle from '../ButtonStyle/ButtonStyle'
 
 function Sidebar() {
 
   const [categories, setCategories] = useState([])
-  
+
   const [query, setQuery] = useState('')
   const navigate = useNavigate()
   const submitHandler = (e) => {
@@ -41,10 +42,9 @@ function Sidebar() {
             <button type='submit'>
               <BsSearch className='search-in-products-icon' />
             </button>
-
           </form>
 
-          <div className="products-categury">
+          {/* <div className="products-categury">
             <h4>دسته بندی محصولات</h4>
             <ul className='catagury-items'>
               {
@@ -57,7 +57,12 @@ function Sidebar() {
               }
 
             </ul>
-          </div>
+
+          </div> */}
+          <Link to='/search' className='link'>
+            <ButtonStyle>فیلتر محصولات</ButtonStyle>
+          </Link>
+
           <ImageStyle src={imgSrc} title1="بهترین گیاهان آپارتمانی" title2="با ضمانت تعویض" />
         </div>
       </aside>

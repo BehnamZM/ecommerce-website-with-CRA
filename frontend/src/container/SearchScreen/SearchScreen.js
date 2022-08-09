@@ -168,7 +168,7 @@ function SearchScreen() {
               <div>
                 <ul>
                   <li>
-                    <Link
+                    <Link className='link'
                       className={'all' === category ? 'text-bold' : ''}
                       to={getFilterUrl({ category: 'all' })}
                     >
@@ -177,7 +177,7 @@ function SearchScreen() {
                   </li>
                   {categories.map((c) => (
                     <li key={c}>
-                      <Link
+                      <Link className='link'
                         className={c === category ? 'text-bold' : ''}
                         to={getFilterUrl({ category: c })}
                       >
@@ -191,7 +191,7 @@ function SearchScreen() {
                 <h3> بر اساس قیمت</h3>
                 <ul>
                   <li>
-                    <Link
+                    <Link className='link'
                       className={'all' === price ? 'text-bold' : ''}
                       to={getFilterUrl({ price: 'all' })}
                     >
@@ -200,7 +200,7 @@ function SearchScreen() {
                   </li>
                   {prices.map((p) => (
                     <li key={p.value}>
-                      <Link
+                      <Link className='link'
                         to={getFilterUrl({ price: p.value })}
                         className={p.value === price ? 'text-bold' : ''}
                       >
@@ -215,7 +215,7 @@ function SearchScreen() {
                 <ul>
                   {ratings.map((r) => (
                     <li key={r.name}>
-                      <Link
+                      <Link className='link'
                         to={getFilterUrl({ rating: r.rating })}
                         className={`${r.rating}` === `${rating}` ? 'text-bold' : ''}
                       >
@@ -224,7 +224,7 @@ function SearchScreen() {
                     </li>
                   ))}
                   <li>
-                    <Link
+                    <Link className='link'
                       to={getFilterUrl({ rating: 'all' })}
                       className={rating === 'all' ? 'text-bold' : ''}
                     >
@@ -291,7 +291,7 @@ function SearchScreen() {
               <option value='toprated'>پیشنهاد خریداران</option>
             </select>
           </div>
-          <div className="products-list">
+          <div className="products-list-one">
             {
               loading ? <Preload /> :
                 error ? (<h3>{error}</h3>) : (
@@ -302,14 +302,12 @@ function SearchScreen() {
           </div>
           <div className='pagination'>
             {[...Array(pages).keys()].map((x) => (
-              <Link
+              <Link className='link'
                 key={x + 1}
                 to={getFilterUrl({ page: x + 1 })}
               >
-                <div>
-                  className={Number(page) === x + 1 ? 'pagination-item' : 'pagination-item'}
-                  variant="light"
-
+                <div
+                  className={Number(page) === x + 1 ? 'pagination-item page-active' : 'pagination-item'}>
                   {x + 1}
                 </div>
               </Link>

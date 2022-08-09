@@ -21,6 +21,11 @@ body {
 
 }
 
+.Link{
+  text-decoration: none;
+  color: #000;
+}
+
 :root {
   --color-primary: #abd373;
   --color-secondary: #333333;

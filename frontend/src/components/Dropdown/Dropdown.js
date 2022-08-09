@@ -2,13 +2,11 @@ import React, { useState } from 'react'
 import './Dropdown.css'
 import dropMainImg from '../../assets/sanseveria (1).jpg'
 import dropImg1 from '../../assets/sanseveria (1).jpg'
-import dropImg4 from '../../assets/sanseveria (6).jpg'
-import dropImg5 from '../../assets/sanseveria (7).jpg'
-import dropImg6 from '../../assets/sanseveria(8).png'
-import dropImg7 from '../../assets/benjamin1.jpg'
-import dropImg8 from '../../assets/benjamin2.png'
-import dropImg9 from '../../assets/adeniom.jpg'
-import dropImg10 from '../../assets/sanseveria (1).jpg'
+import dropImg2 from '../../assets/pot1.jpg'
+import dropImg3 from '../../assets/tools.jpg'
+import dropImg4 from '../../assets/Poisons-fertilizers.jpg'
+
+import { Link } from 'react-router-dom'
 
 function Dropdown(props) {
   const [dropImg, setDropImg] = useState(dropMainImg)
@@ -16,33 +14,33 @@ function Dropdown(props) {
 
   return (
     <div className={props.show ? 'dropdown-list show-submenu hover' : 'dropdown-list'} >
-      <ul>
+      <ul onMouseEnter={() => setDropImg(dropImg1)}>
         <h3>گیاهان آپارتمانی</h3>
-        <li className='dropdown-item' onMouseEnter={() => setDropImg(dropImg1)}><a href="#" className='dropdown-link'>سانسوریا</a></li>
-        <li className='dropdown-item' onMouseEnter={() => setDropImg(dropImg1)}><a href="#" className='dropdown-link'>بنجامین</a></li>
-        <li className='dropdown-item' onMouseEnter={() => setDropImg(dropImg4)}><a href="#" className='dropdown-link'>یوکا</a></li>
-        <li className='dropdown-item' onMouseEnter={() => setDropImg(dropImg4)}><a href="#" className='dropdown-link'>آدنیوم</a></li>
+        <li className='dropdown-item'><Link to='/search' className='dropdown-link'>سانسوریا</Link></li>
+        <li className='dropdown-item'><Link to='/search' className='dropdown-link'>بنجامین</Link></li>
+        <li className='dropdown-item'><Link to='/search' className='dropdown-link'>یوکا</Link></li>
+        <li className='dropdown-item'><Link to='/search' className='dropdown-link'>آدنیوم</Link></li>
       </ul>
-      <ul>
+      <ul onMouseEnter={() => setDropImg(dropImg3)}>
         <h3>لوازم کشاورزی</h3>
-        <li className='dropdown-item' onMouseEnter={() => setDropImg(dropImg5)}><a href="#" className='dropdown-link'>بیلچه</a></li>
-        <li className='dropdown-item' onMouseEnter={() => setDropImg(dropImg6)}><a href="#" className='dropdown-link'>سمپاش</a></li>
-        <li className='dropdown-item' onMouseEnter={() => setDropImg(dropImg7)}><a href="#" className='dropdown-link'>چاقو</a></li>
-        <li className='dropdown-item' onMouseEnter={() => setDropImg(dropImg8)}><a href="#" className='dropdown-link'>گلدان</a></li>
+        <li className='dropdown-item'><Link to='/search' className='dropdown-link'>بیلچه</Link></li>
+        <li className='dropdown-item'><Link to='/search' className='dropdown-link'>سمپاش</Link></li>
+        <li className='dropdown-item'><Link to='/search' className='dropdown-link'>چاقو</Link></li>
+        <li className='dropdown-item'><Link to='/search' className='dropdown-link'>گلدان</Link></li>
       </ul>
-      <ul>
+      <ul onMouseEnter={() => setDropImg(dropImg4)}>
         <h3>کودها و سموم</h3>
-        <li className='dropdown-item' onMouseEnter={() => setDropImg(dropImg9)}><a href="#" className='dropdown-link'>کود npk</a></li>
-        <li className='dropdown-item' onMouseEnter={() => setDropImg(dropImg10)}><a href="#" className='dropdown-link'>قارچکش</a></li>
-        <li className='dropdown-item' onMouseEnter={() => setDropImg(dropImg9)}><a href="#" className='dropdown-link'>حشره کش</a></li>
-        <li className='dropdown-item' onMouseEnter={() => setDropImg(dropImg10)}><a href="#" className='dropdown-link'>ورمی کمپوست</a></li>
+        <li className='dropdown-item'><Link to='/search' className='dropdown-link'>کود npk</Link></li>
+        <li className='dropdown-item'><Link to='/search' className='dropdown-link'>قارچکش</Link></li>
+        <li className='dropdown-item'><Link to='/search' className='dropdown-link'>حشره کش</Link></li>
+        <li className='dropdown-item'><Link to='/search' className='dropdown-link'>ورمی کمپوست</Link></li>
       </ul>
-      <ul>
-        <h3>انواع خاک</h3>
-        <li className='dropdown-item' onMouseEnter={() => setDropImg('/src/assets/sanseveria (7).jpg')}><a href="#" className='dropdown-link'>پرلیت</a></li>
-        <li className='dropdown-item' onMouseEnter={() => setDropImg('/src/assets/sanseveria (1).jpg')}><a href="#" className='dropdown-link'>کوکوپیت</a></li>
-        <li className='dropdown-item' onMouseEnter={() => setDropImg('/src/assets/sanseveria (1).jpg')}><a href="#" className='dropdown-link'>خاک باغچه</a></li>
-        <li className='dropdown-item' onMouseEnter={() => setDropImg('/src/assets/sanseveria (7).jpg')}><a href="#" className='dropdown-link'>خاک رس</a></li>
+      <ul onMouseEnter={() => setDropImg(dropImg2)}>
+        <h3>انواع گلدان</h3>
+        <li className='dropdown-item'><Link to='/search' className='dropdown-link'>گلدان فلزی</Link></li>
+        <li className='dropdown-item'><Link to='/search' className='dropdown-link'>گلدان آبی</Link></li>
+        <li className='dropdown-item'><Link to='/search' className='dropdown-link'>گلدان سنگی</Link></li>
+        <li className='dropdown-item'><Link to='/search' className='dropdown-link'>گلدان پلاستیکی</Link></li>
       </ul>
       <div className='dropdown-img'>
         <img src={dropImg} alt="" />

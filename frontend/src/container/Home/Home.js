@@ -11,7 +11,8 @@ import logger from 'use-reducer-logger'
 import ProductStyle from '../../components/ProductStyle/ProductStyle'
 import axios from 'axios'
 import TitleStyle from '../../components/TitleStyle/TitleStyle'
-
+import Testimonials from '../../components/Testimonials/Testimonials'
+import SkeletonProduct from '../../components/Skeleton/SkeletonProduct'
 const reducer = (state, action) => {
   switch (action.type) {
     case 'FETCH_REQUEST':
@@ -57,7 +58,11 @@ function Home() {
         </div>
         <div className='newest-products-list'>
           {
-            loading ? <p>loading...</p> : error ? <p>{error.message}</p> :
+            loading ? 
+            [1, 2, 3, 4].map(item => (
+              <SkeletonProduct key={item}/>
+            ))
+            : error ? <alert>{error.message}</alert> :
               newestProducts.map(product => (
                 <ProductStyle {...product} key={product._id} />
               ))}
@@ -71,6 +76,7 @@ function Home() {
         <ImageStyle src={posterImg3} title1="ابزارآلات" title2="تضمین ضمانت" />
         <ImageStyle src={posterImg4} title1="کود و سموم" title2="معتبرترین شرکتها" />
       </div>
+      <Testimonials />
     </>
   )
 }
