@@ -144,7 +144,7 @@ function SearchScreen() {
   return (
     <div className="products">
       <div className="products-title">
-        <TitleStyle>سرچ بین محصولات</TitleStyle>
+        <TitleStyle>جستجو</TitleStyle>
       </div>
       <div className="products-body container">
 
@@ -249,7 +249,7 @@ function SearchScreen() {
             </div>
 
             <div>
-              {countProducts === 0 ? 'No' : countProducts} Results
+              {countProducts === 0 ? 'No' : countProducts} نتایج
               {query !== 'all' && ' : ' + query}
               {category !== 'all' && ' : ' + category}
               {price !== 'all' && ' : Price ' + price}
