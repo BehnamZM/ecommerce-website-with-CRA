@@ -44,7 +44,7 @@ function SummeryshoppingCart(props) {
           <Link to='/cart'>
             <button onClick={showHandler}>مشاهده جزئیات</button>
           </Link>
-          <button>بررسی نهایی</button>
+          {/* <button>بررسی نهایی</button> */}
         </div>
       </div>
       {

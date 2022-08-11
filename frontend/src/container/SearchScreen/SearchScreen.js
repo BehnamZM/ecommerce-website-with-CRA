@@ -38,16 +38,16 @@ const reducer = (state, action) => {
 
 const prices = [
   {
-    name: '$1 to $50',
-    value: '1-50',
+    name: '100000 - 300000',
+    value: '100000-300000',
   },
   {
-    name: '$51 to $200',
-    value: '51-200',
+    name: '300001 - 700000',
+    value: '300001-700000',
   },
   {
-    name: '$201 to $1000',
-    value: '201-1000',
+    name: '700001 - 3000000',
+    value: '700001-3000000',
   },
 ];
 
@@ -75,7 +75,7 @@ export const ratings = [
 
 
 function SearchScreen() {
-
+  const [listType, setListType] = useState(true)
   const navigate = useNavigate();
   const { search } = useLocation();
   const sp = new URLSearchParams(search); // /search?category=Shirts
@@ -113,7 +113,7 @@ function SearchScreen() {
   }, [category, error, order, page, price, query, rating]);
 
   const [categories, setCategories] = useState([]);
-  
+
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -157,8 +157,10 @@ function SearchScreen() {
                 placeholder='سرچ کن'
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
-              <button type='submit'>
-                <BsSearch className='search-in-products-icon' />
+              <button
+                type='submit'
+                className='search-in-products-icon'>
+                <BsSearch />
               </button>
 
             </form>
@@ -168,8 +170,8 @@ function SearchScreen() {
               <div>
                 <ul>
                   <li>
-                    <Link className='link'
-                      className={'all' === category ? 'text-bold' : ''}
+                    <Link
+                      className={'all' === category ? 'link link-active' : 'link'}
                       to={getFilterUrl({ category: 'all' })}
                     >
                       همه محصولات
@@ -177,8 +179,8 @@ function SearchScreen() {
                   </li>
                   {categories.map((c) => (
                     <li key={c}>
-                      <Link className='link'
-                        className={c === category ? 'text-bold' : ''}
+                      <Link
+                        className={c === category ? 'link link-active' : 'link'}
                         to={getFilterUrl({ category: c })}
                       >
                         {c}
@@ -191,8 +193,8 @@ function SearchScreen() {
                 <h3> بر اساس قیمت</h3>
                 <ul>
                   <li>
-                    <Link className='link'
-                      className={'all' === price ? 'text-bold' : ''}
+                    <Link
+                      className={'all' === price ? 'link link-active' : 'link'}
                       to={getFilterUrl({ price: 'all' })}
                     >
                       همه
@@ -200,9 +202,9 @@ function SearchScreen() {
                   </li>
                   {prices.map((p) => (
                     <li key={p.value}>
-                      <Link className='link'
+                      <Link
                         to={getFilterUrl({ price: p.value })}
-                        className={p.value === price ? 'text-bold' : ''}
+                        className={p.value === price ? 'link link-active' : 'link'}
                       >
                         {p.name}
                       </Link>
@@ -215,18 +217,18 @@ function SearchScreen() {
                 <ul>
                   {ratings.map((r) => (
                     <li key={r.name}>
-                      <Link className='link'
+                      <Link
                         to={getFilterUrl({ rating: r.rating })}
-                        className={`${r.rating}` === `${rating}` ? 'text-bold' : ''}
+                        className={`${r.rating}` === `${rating}` ? 'link link-active' : 'link'}
                       >
                         <Rating caption={' & up'} rating={r.rating}></Rating>
                       </Link>
                     </li>
                   ))}
                   <li>
-                    <Link className='link'
+                    <Link
                       to={getFilterUrl({ rating: 'all' })}
-                      className={rating === 'all' ? 'text-bold' : ''}
+                      className={rating === 'all' ? 'link link-active' : 'link'}
                     >
                       <Rating caption={' & up'} rating={0}></Rating>
                     </Link>
@@ -264,17 +266,17 @@ function SearchScreen() {
                 </div>
               ) : null}
             </div>
-            <ImageStyle src={imgSrc} title1="بهترین گیاهان آپارتمانی" title2="با ضمانت تعویض" />
+            <ImageStyle search='/search?category=آپارتمانی&query=all&price=all&rating=all&order=newest&page=1' src={imgSrc} title1="بهترین گیاهان آپارتمانی" title2="با ضمانت تعویض" />
           </div>
         </aside>
 
         <div className="products-inner">
           <div className="products-controls">
             <div className="show-products-Horizontal">
-              <CgMenuGridR />
+              <CgMenuGridR onClick={() => setListType(true)} />
             </div>
             <div className="show-products-vertical">
-              <FaThList />
+              <FaThList onClick={() => setListType(false)} />
             </div>
             <div className="number-of-products">
               9 محصول از 30 تا
@@ -291,18 +293,18 @@ function SearchScreen() {
               <option value='toprated'>پیشنهاد خریداران</option>
             </select>
           </div>
-          <div className="products-list-one">
+          <div className={listType ? "products-list-one" : "products-list-two"}>
             {
               loading ? <Preload /> :
                 error ? (<h3>{error}</h3>) : (
                   products.map(product => (
-                    <ProductStyle {...product} key={product._id} />)
+                    <ProductStyle type={listType} {...product} key={product._id} />)
                   ))
             }
           </div>
           <div className='pagination'>
             {[...Array(pages).keys()].map((x) => (
-              <Link className='link'
+              <Link
                 key={x + 1}
                 to={getFilterUrl({ page: x + 1 })}
               >

@@ -14,7 +14,7 @@ function SelectPayment() {
   const {
     cart: { shippingInfos, paymentMethod }
   } = state
-  const [paymentMethodName, setPaymentMethodName] = useState(paymentMethod || 'bankcart')
+  const [paymentMethodName, setPaymentMethodName] = useState(paymentMethod || 'پرداخت از طریق کارت بانکی')
 
 
   const paymentMethodHandler = (e) => {
@@ -40,23 +40,25 @@ function SelectPayment() {
       </div>
       <div className="payment-body">
         <form onSubmit={paymentMethodHandler}>
-          <label htmlFor=""><p>پرداخت از طریق کیف پول</p>
+          <label htmlFor="benkcart"><p>پرداخت از طریق کارت بانکی</p>
             <input 
             type="radio" 
+            id='benkcart'
             className='payment-way' 
             value='پرداخت از طریق کارت بانکی' 
-            label='bankcart' 
-            checked={paymentMethodName === 'bankcart'}
+            label='پرداخت از طریق کارت بانکی'
+            checked={paymentMethodName === 'پرداخت از طریق کارت بانکی'}
             onChange={(e) => setPaymentMethodName(e.target.value)}
             />
           </label>
-          <label htmlFor=""><p>پرداخت از طریق کارت بانکی</p>
+          <label htmlFor="bagmoney"><p>پرداخت از طریق کیف پول</p>
             <input 
+            id='bagmoney'
             type="radio" 
             className='payment-way'  
             value='پرداخت از طریف کیف پول' 
-            label='bagmoney'
-            checked={paymentMethodName === 'bagmoney'}
+            label='پرداخت از طریف کیف پول'
+            checked={paymentMethodName === 'پرداخت از طریف کیف پول'}
             onChange={(e) => setPaymentMethodName(e.target.value)}
              />
           </label>

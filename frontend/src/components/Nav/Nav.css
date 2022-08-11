@@ -214,8 +214,6 @@ nav .navbar>ul li a:hover {
 
 
 
-
-
 .admin-control{
   position: relative;
 
@@ -280,21 +278,6 @@ nav .navbar>ul li a:hover {
 
 
 
-
-
-@media (min-width:789px) {
-  .fixed-nav{
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  
-  .fixed-nav .nav-part-one .call-with-us{
-    display: none;
-  }
-  
-}
-
-
 @media (max-width:788px) {
   nav {
     padding: 0;
@@ -313,7 +296,6 @@ nav .navbar>ul li a:hover {
     top: 0;
     padding: 1rem;
     overflow-x: hidden;
-    
     color: #ffffff;
   }
 
@@ -329,7 +311,7 @@ nav .navbar>ul li a:hover {
   }
 
   nav .hidden {
-    right: -100%;
+    right: -105%;
   }
 
   nav .show {
@@ -390,4 +372,16 @@ nav .navbar>ul li a:hover {
 
   }
 
+}
+
+@media (min-width:789px) {
+  .fixed-nav{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+  .fixed-nav .nav-part-one .call-with-us{
+    display: none;
+  }
+  
 }

@@ -82,3 +82,14 @@
   left: 2%;
   color: #fff;
 }
+
+@media screen and (max-width: 568px){
+  .testimonial-overlay {
+    width: 160px;
+    height: 160px;
+  }
+
+  .testimonial-icon {
+    font-size: 55px;
+  }
+}

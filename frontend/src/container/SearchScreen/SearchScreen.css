@@ -34,6 +34,10 @@
 
 }
 
+.products-category ul {
+  padding-right: 0;
+}
+
 .products-category li{
   list-style: none;
 }

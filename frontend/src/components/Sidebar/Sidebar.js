@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './Sidebar.css'
 import Input from '../../components/Input/Input'
 import ImageStyle from '../../components/ImageStyle/ImageStyle'
 import { BsSearch } from 'react-icons/bs'
-import { IoIosArrowBack } from 'react-icons/io'
+// import { IoIosArrowBack } from 'react-icons/io'
 import imgSrc from '../../assets/sanseveria(8).png'
-import axios from 'axios'
+// import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import ButtonStyle from '../ButtonStyle/ButtonStyle'
 
 function Sidebar() {
 
-  const [categories, setCategories] = useState([])
+  // const [categories, setCategories] = useState([])
 
   const [query, setQuery] = useState('')
   const navigate = useNavigate()
@@ -20,13 +20,13 @@ function Sidebar() {
     navigate(query ? `/search/?query=${query}` : '/search')
   }
 
-  useEffect(() => {
-    const fetchCategories = async () => {
-      const { data } = await axios.get('api/products/categories')
-      setCategories(data)
-    }
-    fetchCategories()
-  }, [])
+  // useEffect(() => {
+  //   const fetchCategories = async () => {
+  //     const { data } = await axios.get('api/products/categories')
+  //     setCategories(data)
+  //   }
+  //   fetchCategories()
+  // }, [])
 
   return (
     <>
@@ -39,8 +39,8 @@ function Sidebar() {
               placeholder='سرچ کن'
               onChange={(e) => setQuery(e.target.value)}
             />
-            <button type='submit'>
-              <BsSearch className='search-in-products-icon' />
+            <button className='search-in-products-icon' type='submit'>
+              <BsSearch  />
             </button>
           </form>
 
@@ -59,11 +59,11 @@ function Sidebar() {
             </ul>
 
           </div> */}
-          <Link to='/search' className='link'>
+          <Link to='/search'>
             <ButtonStyle>فیلتر محصولات</ButtonStyle>
           </Link>
 
-          <ImageStyle src={imgSrc} title1="بهترین گیاهان آپارتمانی" title2="با ضمانت تعویض" />
+          <ImageStyle search='/search?category=آپارتمانی&query=all&price=all&rating=all&order=newest&page=1' src={imgSrc} title1="بهترین گیاهان آپارتمانی" title2="با ضمانت تعویض" />
         </div>
       </aside>
     </>

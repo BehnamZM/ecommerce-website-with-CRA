@@ -68,7 +68,7 @@
   }
 }
 
-  @media screen and (min-width: 569px) and (max-width: 800px) {
+@media screen and (max-width: 568px) {
     .edit-profile .edit-profile-body {
       width: 90%;
     }

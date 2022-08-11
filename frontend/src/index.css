@@ -21,9 +21,21 @@ body {
 
 }
 
+textarea {
+  font-family: vazir;
+}
+
 .Link{
   text-decoration: none;
   color: #000;
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+
+.link-active {
+  font-weight: bold;
 }
 
 :root {
@@ -36,4 +48,14 @@ body {
   --container-width-md: 85%;
   --container-width-sm: 95%;
   --transition-element:all .3s ease;
+}
+
+@media screen and (max-width: 568px){
+  body{
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (min-width: 569px) and (max-width: 800px){
+  
 }

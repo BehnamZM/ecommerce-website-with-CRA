@@ -30,3 +30,11 @@
 .title-style::before {
   right: 100%;
 }
+
+
+
+@media screen and (max-width: 568px){
+  .title-style {
+    font-size: 15px;
+  }
+}

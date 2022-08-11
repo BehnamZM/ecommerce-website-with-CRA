@@ -116,36 +116,39 @@ function UserList() {
       {loadingDelete && <Preload />}
       {
         loading ? <Preload /> :
-          error ? (<h3>{error}</h3>) : (<table className='container'>
-            <thead>
-              <tr>
-                <th>آیدی</th>
-                <th>نام</th>
-                <th>ایمیل</th>
-                <th>ادمین</th>
-                <th>فروشنده</th>
-                <th>عملیاتها</th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                users.map(user => (
-                  <tr key={user._id}>
-                    <td>{user._id}</td>
-                    <td>{user.name}</td>
-                    <td>{user.email}</td>
-                    <td>{user.isAdmin ? 'بله' : 'خیر'}</td>
-                    <td>{user.seller ? 'بله' : 'خیر'}</td>
-                    <td>
-                      <button onClick={() => deleteHandler(user)}>حذف</button>
-                      <button onClick={() => navigate(`/admin/user/${user._id}`)}>ویرایش</button>
-                    </td>
+          error ? (<h3>{error}</h3>) : (
+            <div style={{ overflowX: 'auto' }}>
+              <table className='container'>
+                <thead>
+                  <tr>
+                    <th>آیدی</th>
+                    <th>نام</th>
+                    <th>ایمیل</th>
+                    <th>ادمین</th>
+                    <th>فروشنده</th>
+                    <th>عملیاتها</th>
                   </tr>
-                ))
-              }
+                </thead>
+                <tbody>
+                  {
+                    users.map(user => (
+                      <tr key={user._id}>
+                        <td>{user._id}</td>
+                        <td>{user.name}</td>
+                        <td>{user.email}</td>
+                        <td>{user.isAdmin ? 'بله' : 'خیر'}</td>
+                        <td>{user.seller ? 'بله' : 'خیر'}</td>
+                        <td>
+                          <button onClick={() => deleteHandler(user)}>حذف</button>
+                          <button onClick={() => navigate(`/admin/user/${user._id}`)}>ویرایش</button>
+                        </td>
+                      </tr>
+                    ))
+                  }
 
-            </tbody>
-          </table>)
+                </tbody>
+              </table>
+            </div>)
       }
 
     </div>

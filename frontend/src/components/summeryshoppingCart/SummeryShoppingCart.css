@@ -1,7 +1,7 @@
 .summery-shopping-cart {
   width: 40%;
   position: fixed;
-  right: -40%;
+  right: -50%;
   top: 0;
   height: 100vh;
   background-color: #ffffff;
@@ -85,12 +85,14 @@
 @media screen and (max-width: 568px){
   .summery-shopping-cart{
     width: 90%;
-    right: -90%;
+    right: -100%;
    } 
     .summery-shopping-cart-show {
       right: 0;
     }
-    
+    .summery-shopping-cart .summery-shopping-cart-body {
+      padding: 1rem;
+    }
   
 }
 

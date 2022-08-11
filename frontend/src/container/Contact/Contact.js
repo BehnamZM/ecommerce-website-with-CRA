@@ -9,6 +9,12 @@ import BottonStyle from '../../components/ButtonStyle/ButtonStyle'
 
 
 function Contact() {
+
+  const submitHandler = (e) => {
+    e.preventDefault()
+    alert('متاسفانه امکان ارسال پیام وجود ندارد!')
+  }
+  
   return (
     <div className="contact">
       <div className="contact-title">
@@ -39,14 +45,26 @@ function Contact() {
             </div>
           </div>
         </div>
-        <div className="massage-to-us">
-          <Input type="text" placeholder='نام خود را وارد کنید' />
-          <Input type="text" placeholder='نام خانوادگی خود را وارد کنید' />
-          <Input type="email" placeholder='ایمیل خود را وارد کنید' />
-          <Input type="tel" placeholder='شماره تماس خود را وارد کنید' />
-          <textarea inputType='texterea' placeholder='پیام شما'  className='input-element' cols="30" rows="10"/>
-          <BottonStyle>ارسال پیام</BottonStyle>
-        </div>
+        <form onSubmit={submitHandler} className="massage-to-us">
+          <Input 
+          type="text" 
+          placeholder='نام خود را وارد کنید' />
+          <Input 
+          type="text" 
+          placeholder='نام خانوادگی خود را وارد کنید' />
+          <Input 
+          type="email" 
+          placeholder='ایمیل خود را وارد کنید' />
+          <Input 
+          type="tel" 
+          placeholder='شماره تماس خود را وارد کنید' />
+          <textarea inputType='texterea' placeholder='پیام شما' className='input-element' 
+          cols="30" 
+          rows="10" />
+          <div>
+            <BottonStyle>ارسال پیام</BottonStyle>
+          </div>
+        </form>
       </div>
     </div>
   )

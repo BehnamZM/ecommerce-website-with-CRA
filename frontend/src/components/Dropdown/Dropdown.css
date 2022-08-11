@@ -8,13 +8,13 @@
   padding: 0;
   position: absolute;
   bottom: -1200%;
-  right: -600%;
+  right: -680%;
   transition: var(--transition-element);
   box-shadow: var(--box-shadow);
 }
 
 .fixed-nav.dropdown-list {
-  right: -700%;
+  right: -700% !important;
 }
 
 .dropdown-list h3 {

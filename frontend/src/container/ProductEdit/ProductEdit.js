@@ -155,7 +155,7 @@ function ProductEdit() {
     <div className='edit-product'>
       <div className='edit-product-title'>
         <TitleStyle>
-          ویرایش محصول { name }
+          ویرایش محصول {name}
         </TitleStyle>
       </div>
       <div className='edit-product-body'>
@@ -181,18 +181,27 @@ function ProductEdit() {
                     value={price}
                     onChange={e => setPrice(e.target.value)} />
                 </label>
-                <label>تصویر
+                <div>تصویر
                   <Input
-                    type="text"
-                    value={image}
-                    onChange={e => setImage(e.target.value)} />
-                </label>
-                <label>تصاویر
-                  <Input
-                     type="file" 
-                     onChange={uploadFileHandler} />
-                     {loadingUpload && <preload />}
-                </label>
+                    type="file"
+                    onChange={uploadFileHandler} />
+                </div>
+
+                <div>
+                  <label>تصاویر اضافی</label>
+                  {images.length === 0 && <p>تصویری وجود ندارد</p>}
+                  <ul variant="flush">
+                    {images.map((x) => (
+                      <li key={x}>
+                        {x}
+                        <button onClick={() => deleteFileHandler(x)}>
+                          <i className="fa fa-times-circle"></i>
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
                 <label>برند
                   <Input
                     type="text"
@@ -219,7 +228,7 @@ function ProductEdit() {
                     placeholder='نام کاربر'
                     onChange={e => setDescription(e.target.value)}></textarea>
                 </label>
-                
+
 
                 <div>
                   <ButtonStyle>{loadingUpdate ? '...' : 'آپدیت'}</ButtonStyle>

@@ -83,7 +83,6 @@ function ProductList() {
         const { data } = await axios.get(`/api/products/admin?page=${page} `, {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         });
-
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
       } catch (err) { }
     };
@@ -141,11 +140,11 @@ function ProductList() {
     <div className='product-list'>
       <div className='product-list-title'>
         <TitleStyle>
-          لیست کاربران
+          لیست محصولات
         </TitleStyle>
       </div>
-      <div style={{ textAlign: 'center' }}>
-        <ButtonStyle onClick={createHandler}>  {loadingCreate ? '...' : 'افزودن محصول'}</ButtonStyle>
+      <div style={{ textAlign: 'center' }} onClick={createHandler}>
+        <ButtonStyle>  {loadingCreate ? '...' : 'افزودن محصول'}</ButtonStyle>
       </div>
 
       {loadingDelete && <Preload />}
@@ -153,41 +152,43 @@ function ProductList() {
         loading ? <Preload /> :
           error ? (<h3>{error}</h3>) : (
             <>
-              <table className='container'>
-                <thead>
-                  <tr>
-                    <th>آیدی</th>
-                    <th>نام</th>
-                    <th>قیمت</th>
-                    <th>دسته بندی</th>
-                    <th>برند</th>
-                    <th>عملیاتها</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {
-                    products.map(product => (
-                      <tr key={product._id}>
-                        <td>{product._id}</td>
-                        <td>{product.name}</td>
-                        <td>{product.price}</td>
-                        <td>{product.category}</td>
-                        <td>{product.brand}</td>
+              <div style={{ overflowX: 'auto' }}>
+                <table className='container'>
+                  <thead>
+                    <tr>
+                      <th>آیدی</th>
+                      <th>نام</th>
+                      <th>قیمت</th>
+                      <th>دسته بندی</th>
+                      <th>برند</th>
+                      <th>عملیاتها</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {
+                      products.map(product => (
+                        <tr key={product._id}>
+                          <td>{product._id}</td>
+                          <td>{product.name}</td>
+                          <td>{product.price}</td>
+                          <td>{product.category}</td>
+                          <td>{product.brand}</td>
 
-                        <td>
-                          <button onClick={() => deleteHandler(product)}>حذف</button>
-                          <button onClick={() => navigate(`/admin/product/${product._id}`)}>ویرایش</button>
-                        </td>
-                      </tr>
-                    ))
-                  }
+                          <td>
+                            <button onClick={() => deleteHandler(product)}>حذف</button>
+                            <button onClick={() => navigate(`/admin/product/${product._id}`)}>ویرایش</button>
+                          </td>
+                        </tr>
+                      ))
+                    }
 
-                </tbody>
-              </table>
+                  </tbody>
+                </table>
+              </div>
 
               <div className='pagination'>
                 {[...Array(pages).keys()].map((x) => (
-                  <Link className= 'pagination-item'
+                  <Link className='pagination-item'
                     key={x + 1}
                     to={`/admin/products?page=${x + 1}`}
                   >

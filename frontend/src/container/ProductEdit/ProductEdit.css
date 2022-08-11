@@ -35,4 +35,8 @@
   .register .register-body form {
     padding: 10px;
   }
+
+  .edit-product .edit-product-body {
+    width: 100%;
+  }
 }

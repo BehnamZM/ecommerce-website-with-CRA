@@ -31,3 +31,15 @@
   background-color: var(--color-primary);
   z-index: 0;
 }
+
+@media screen and (max-width: 568px){
+  .checkout-steps{
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 569px) and (max-width: 800px){
+  .checkout-steps{
+    width: 60%;
+  }
+}

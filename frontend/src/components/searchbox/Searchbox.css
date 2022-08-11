@@ -9,7 +9,7 @@
   transition: var(--transition-element);
   opacity: 0;
   visibility: hidden;
-  z-index: 20;
+  z-index: 1000;
 }
 
 .searchbox-show {
@@ -39,8 +39,8 @@
   color: #ffffff;
 }
 
-.searchbox .search-body>input {
-  width: 70%;
+.searchbox .search-body .search-input {
+  width: 100%;
   padding: 2rem;
   font-size: 25px;
   background-color: transparent;
@@ -49,4 +49,19 @@
   outline: none;
   color: #ffffff;
   text-align: center;
+  position: relative;
+}
+
+.searchbox .search-body>form {
+  position: relative;
+}
+
+.searchbox .search-body .search-in-products-icon {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  bottom: 22px;
+  position: absolute;
 }

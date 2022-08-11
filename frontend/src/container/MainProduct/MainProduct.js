@@ -12,6 +12,7 @@ import Rating from "../../components/Rating/Rating";
 import { Store } from "../../Store";
 import ButtonStyle from "../../components/ButtonStyle/ButtonStyle";
 import { Link } from "react-router-dom";
+import SkeletonProduct from "../../components/Skeleton/SkeletonProduct";
 // import { RiRestaurantLine } from "react-icons/ri";
 
 
@@ -25,6 +26,12 @@ const reducer = (state, action) => {
       return { ...state, loading: false, product: action.payload };
     case 'FETCH_FAIL':
       return { ...state, loading: false, error: action.payload };
+    case 'SIMILAR_PRODUCTS_REQUEST':
+      return { ...state, similarLoading: true };
+    case 'SIMILAR_PRODUCTS_SUCCESS':
+      return { ...state, similarLoading: false, similarProducts: action.payload };
+    case 'SIMILAR_PRODUCTS_FAIL':
+      return { ...state, similarLoading: false, error: action.payload };
     case 'CREATE_REQUEST':
       return { ...state, loadingCreateReview: true };
     case 'CREATE_SUCCESS':
@@ -43,29 +50,52 @@ function MainProduct() {
   const [comment, setComment] = useState('');
   const navigate = useNavigate()
 
-  const [{ loading, error, product, loadingCreateReview }, dispatch] = useReducer(reducer, {
+  const [{ loading, error, product, loadingCreateReview, similarProducts, similarLoading }, dispatch] = useReducer(reducer, {
     product: [],
+    similarProducts: [],
     loading: true,
-    error: ''
+    error: '',
+    similarLoading: true,
+    loadingCreateReview: true,
   })
 
   let params = useParams()
   const { slug } = params
-  // let similarProducts
+
+
+
+  // fetch product from backend
 
   useEffect(() => {
-
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });
       try {
         const result = await axios.get(`/api/products/slug/${slug}`)
         dispatch({ type: 'FETCH_SUCCESS', payload: result.data })
 
-        // const { data } = await axios.get('/api/products')
-        // similarProducts = data.find(item => item._id === result.data._id).slice(0, 3)
+      } catch (err) {
+        dispatch({ type: 'FETCH_FAIL', payload: err.message })
+      }
+    }
+    fetchData()
+  }, [slug])
+
+
+
+  // fetch similar products from backend
+
+  useEffect(() => {
+    const fetchData = async () => {
+      dispatch({ type: 'SIMILAR_PRODUCTS_REQUEST' });
+      try {
+        const { data } = await axios.get('/api/products')
+        
+        let filteredArray = data.filter(item => item.slug === slug)
+        let sliceSimilarProducts = filteredArray.slice(0, 4)
+        dispatch({ type: 'SIMILAR_PRODUCTS_SUCCESS', payload: sliceSimilarProducts })
 
       } catch (err) {
-        dispatch({ type: 'FETCH_FAIL', payload: err.massage })
+        dispatch({ type: 'SIMILAR_PRODUCTS_FAIL', payload: err.message })
       }
     }
     fetchData()
@@ -140,11 +170,11 @@ function MainProduct() {
       </div>
       {
         loading ? <Preload /> :
-          error ? (<alert>{error}</alert>) : (
+          error ? (alert({ error })) : (
             <>
               <div className="main-product-body container">
                 <div className="product-slider">
-                  <MainProductSlider img={product.images} name={product.name}/>
+                  <MainProductSlider img={product.images} name={product.name} />
                 </div>
                 <div className="product-infos">
                   <h4 className="product-title">{product.name}</h4>
@@ -185,15 +215,15 @@ function MainProduct() {
                   محصولات مشابه
                 </TitleStyle>
                 <div className="related-products-list">
-                  {/* {
-                    similarProducts.map(similarProduct => (
-                      <ProductStyle {...similarProduct} key={similarProduct._id} />
-                    ))
-                  } */}
-                  <ProductStyle />
-                  <ProductStyle />
-                  <ProductStyle />
-                  <ProductStyle />
+                  {
+                    similarLoading ? [1, 2, 3, 4].map(i => (
+                      <SkeletonProduct key={i} />
+                    )) : error ? alert({ error }) :
+
+                      similarProducts.map(similarProduct => (
+                        <ProductStyle {...similarProduct} key={similarProduct._id} />
+                      ))
+                  }
                 </div>
               </div>
 

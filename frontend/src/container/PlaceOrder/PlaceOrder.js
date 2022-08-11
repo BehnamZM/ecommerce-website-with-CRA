@@ -30,6 +30,12 @@ function PlaceOrder() {
   }, [cart, navigate]);
 
 
+  const submitHandler = (e) => {
+    e.preventDefault()
+    alert('متاسفانه در حال حاضر به سیستم بانکی متصل نیستیم!')
+  }
+
+
   return (
     <div className="placeorder-page">
       <CheckoutSteps step1 step2 step3 step4 />
@@ -100,7 +106,7 @@ function PlaceOrder() {
                 <p className='title'>مبلغ قابل پرداخت:</p>
                 <p className='price'>{cart.totalPrice.toFixed(2)} تومان </p>
               </div>
-              <div>
+              <div onClick={submitHandler}>
                 <ButtonStyle>
                   تکمیل خرید
                 </ButtonStyle>

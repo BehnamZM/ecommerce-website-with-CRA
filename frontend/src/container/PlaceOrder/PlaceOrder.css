@@ -67,3 +67,26 @@
 .preview-price-box .button-style{
   width: 100%;
 }
+
+
+
+@media screen and (max-width: 568px){
+  .preview-price-box{
+    width: 90%;
+  }
+
+  .placeorder-body .preview-orders {
+    width: 90%;
+  
+  }
+
+  .preview-order-item .preview-order-price p{
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 569px) and (max-width: 800px){
+  .preview-price-box{
+    width: 60%;
+  }
+}

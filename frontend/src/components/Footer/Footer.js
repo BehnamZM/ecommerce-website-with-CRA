@@ -38,7 +38,7 @@ function Footer() {
           <h3>اکانت من</h3>
           <Link to='/login' className='my-account-link'>ورود و ثبت نام</Link>
           <Link to='/cart' className='my-account-link'>سبد خرید</Link>
-          <Link to='/cart' className='my-account-link'>لیست علاقخ مندی ها</Link>
+          <Link to='/' className='my-account-link'>لیست علاقخ مندی ها</Link>
           <Link to='/' className='my-account-link'>داشبورد</Link>
         </div>
 

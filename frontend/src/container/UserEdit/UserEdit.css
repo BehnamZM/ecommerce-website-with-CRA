@@ -35,4 +35,13 @@
   .register .register-body form {
     padding: 10px;
   }
+
+  .edit-user .edit-user-body {
+    width: 90%;
+  }
+
+  .edit-user .edit-user-body form label{
+    flex-direction: row;
+    align-items: center;
+  }
 }

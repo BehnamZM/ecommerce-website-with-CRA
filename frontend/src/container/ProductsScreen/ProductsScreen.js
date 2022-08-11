@@ -8,8 +8,8 @@ import ProductStyle from '../../components/ProductStyle/ProductStyle'
 import axios from 'axios'
 import logger from 'use-reducer-logger'
 import Preload from '../../components/Preload/Preload'
-import { Link } from 'react-router-dom'
-import ButtonStyle from '../../components/ButtonStyle/ButtonStyle'
+// import { Link } from 'react-router-dom'
+// import ButtonStyle from '../../components/ButtonStyle/ButtonStyle'
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -57,6 +57,7 @@ function ProductsScreen() {
     };
     fetchData();
   }, []);
+
 
   useEffect(() => {
     let endIndex = pageSize * currentPage

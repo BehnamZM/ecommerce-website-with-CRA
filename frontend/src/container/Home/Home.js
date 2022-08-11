@@ -54,7 +54,7 @@ function Home() {
       <Services />
       <div className='newest-products'>
         <div>
-          <TitleStyle>جدیدترین محصولات</TitleStyle>
+          <TitleStyle>جدیدترین ها</TitleStyle>
         </div>
         <div className='newest-products-list'>
           {
@@ -62,19 +62,19 @@ function Home() {
             [1, 2, 3, 4].map(item => (
               <SkeletonProduct key={item}/>
             ))
-            : error ? <alert>{error.message}</alert> :
+            : error ? alert({error}) :
               newestProducts.map(product => (
                 <ProductStyle {...product} key={product._id} />
               ))}
         </div>
       </div>
       <div className="images-box container">
-        <ImageStyle src={posterImg1} title1="انواع گلدان" title2="بهترین کیفیت" />
-        <ImageStyle src={posterImg2} title1="گیاهان آپارتمانی" title2="ارسال سریع" />
+        <ImageStyle search='/search/?query=گلدان' src={posterImg1} title1="انواع گلدان" title2="بهترین کیفیت" />
+        <ImageStyle search='/search?category=آپارتمانی&query=all&price=all&rating=all&order=newest&page=1' src={posterImg2} title1="انواع گیاهان آپارتمانی" title2="ارسال سریع" />
       </div>
       <div className="images-box container" dir='ltr'>
-        <ImageStyle src={posterImg3} title1="ابزارآلات" title2="تضمین ضمانت" />
-        <ImageStyle src={posterImg4} title1="کود و سموم" title2="معتبرترین شرکتها" />
+        <ImageStyle search='/search?category=ابزارآلات&query=all&price=all&rating=all&order=newest&page=1' src={posterImg3} title1="ابزارآلات" title2="تضمین ضمانت" />
+        <ImageStyle search='/search?category=کود%20و%20سموم&query=all&price=all&rating=all&order=newest&page=1' src={posterImg4} title1="کود و سموم" title2="معتبرترین شرکتها" />
       </div>
       <Testimonials />
     </>

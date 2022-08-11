@@ -25,8 +25,20 @@ function Testimonials() {
 
 
         <Swiper
-          spaceBetween={30}
-          slidesPerView={2}
+        breakpoints={{
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          992: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 2,
+            spaceBetween: 50,
+          },
+        }}
           cssMode={true}
           pagination={{
             clickable: true,

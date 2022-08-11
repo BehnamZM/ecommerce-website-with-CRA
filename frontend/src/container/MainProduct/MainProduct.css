@@ -143,6 +143,7 @@
 .customer-reviews-form form textarea {
   border: 1px solid #d2d2d2;
   outline: none;
+  font-family: vazir;
 }
 
 .signin-message{
@@ -150,3 +151,33 @@
   margin: 2rem 0;
 }
 
+.related-products .product .product-inner {
+  flex-direction: column;
+}
+
+.related-products .product .product-inner .product-img{
+  width: 100%;
+}
+
+
+@media screen and (max-width: 568px){
+  .main-product .main-product-body {
+    grid-template-columns: 1fr;
+  }
+
+  .related-products .related-products-list {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-reviews {
+    width: 80%;
+    margin: 4rem auto;
+  }
+}
+
+@media screen and (min-width: 569px) and (max-width: 800px){
+  .related-products .related-products-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+}
