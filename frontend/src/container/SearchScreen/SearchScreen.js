@@ -92,6 +92,10 @@ function SearchScreen() {
       loading: true,
       error: '',
     });
+  
+  const [paginatedProducts, setPaginatedProducts] = useState([])
+    let pageSize = 6
+  let pagesNumbers
 
 
 
@@ -102,6 +106,10 @@ function SearchScreen() {
           `/api/products/search?page=${page}&query=${query}&category=${category}&price=${price}&rating=${rating}&order=${order}`
         );
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
+        let endIndex = pageSize * currentPage
+        let startIndex = endIndex - pageSize
+        let allShownProducts = result.data.slice(startIndex, endIndex)
+        setPaginatedProducts(allShownProducts)
       } catch (err) {
         dispatch({
           type: 'FETCH_FAIL',
@@ -288,8 +296,8 @@ function SearchScreen() {
                 navigate(getFilterUrl({ order: e.target.value }));
               }}>
               <option value='newest'>جدیدترین ها</option>
-              <option value='highest'>ارزانترین ها</option>
-              <option value='lowest'>گرانترین ها</option>
+              <option value='lowest'>ارزانترین ها</option>
+              <option value='highest'>گرانترین ها</option>
               <option value='toprated'>پیشنهاد خریداران</option>
             </select>
           </div>
@@ -297,7 +305,7 @@ function SearchScreen() {
             {
               loading ? <Preload /> :
                 error ? (<h3>{error}</h3>) : (
-                  products.map(product => (
+                  paginatedProducts.map(product => (
                     <ProductStyle type={listType} {...product} key={product._id} />)
                   ))
             }
