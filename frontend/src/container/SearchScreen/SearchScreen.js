@@ -92,7 +92,7 @@ function SearchScreen() {
       loading: true,
       error: '',
     });
-  
+  const [currentPage, setCurrentPage] = useState(1)
   const [paginatedProducts, setPaginatedProducts] = useState([])
     let pageSize = 6
   let pagesNumbers
