@@ -119,6 +119,20 @@ function SearchScreen() {
     };
     fetchData();
   }, [category, error, order, page, price, query, rating]);
+  
+    useEffect(() => {
+    let endIndex = pageSize * currentPage
+    let startIndex = endIndex - pageSize
+    let allShownProducts = products.slice(startIndex, endIndex)
+    setPaginatedProducts(allShownProducts)
+  }, [currentPage])
+
+  const changePaginate = (newPage) => {
+    setCurrentPage(newPage)
+  }
+  
+    const pagesCount = Math.ceil(products.length / pageSize)
+  pagesNumbers = Array.from(Array(pagesCount).keys())
 
   const [categories, setCategories] = useState([]);
 
@@ -310,17 +324,9 @@ function SearchScreen() {
                   ))
             }
           </div>
-          <div className='pagination'>
-            {[...Array(pages).keys()].map((x) => (
-              <Link
-                key={x + 1}
-                to={getFilterUrl({ page: x + 1 })}
-              >
-                <div
-                  className={Number(page) === x + 1 ? 'pagination-item page-active' : 'pagination-item'}>
-                  {x + 1}
-                </div>
-              </Link>
+         <div className='pagination'>
+            {pagesNumbers.map(pageNumber => (
+              <div className={currentPage === pageNumber + 1 ? 'pagination-item page-active' : 'pagination-item'} onClick={() => changePaginate(pageNumber + 1)}>{pageNumber + 1}</div>
             ))}
 
           </div>
