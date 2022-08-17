@@ -304,8 +304,16 @@ function SearchScreen() {
             }
           </div>
          <div className='pagination'>
-            {pagesNumbers.map(pageNumber => (
-              <div className={currentPage === pageNumber + 1 ? 'pagination-item page-active' : 'pagination-item'} onClick={() => changePaginate(pageNumber + 1)}>{pageNumber + 1}</div>
+            {[...Array(pages).keys()].map((x) => (
+              <Link
+                key={x + 1}
+                to={getFilterUrl({ page: x + 1 })}
+              >
+                <div
+                  className={Number(page) === x + 1 ? 'pagination-item page-active' : 'pagination-item'}>
+                  {x + 1}
+                </div>
+              </Link>
             ))}
 
           </div>
