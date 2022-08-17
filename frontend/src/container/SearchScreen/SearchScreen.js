@@ -108,7 +108,7 @@ function SearchScreen() {
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
         let endIndex = pageSize * currentPage
         let startIndex = endIndex - pageSize
-        let allShownProducts = result.data.slice(startIndex, endIndex)
+        let allShownProducts = data.slice(startIndex, endIndex)
         setPaginatedProducts(allShownProducts)
       } catch (err) {
         dispatch({
