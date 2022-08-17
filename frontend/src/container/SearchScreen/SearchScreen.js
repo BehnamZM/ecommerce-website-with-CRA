@@ -89,15 +89,9 @@ function SearchScreen() {
 
   const [{ loading, error, products, pages, countProducts }, dispatch] =
     useReducer(reducer, {
-      products: [],
       loading: true,
       error: '',
     });
-  const [currentPage, setCurrentPage] = useState(1)
-  const [paginatedProducts, setPaginatedProducts] = useState([])
-    let pageSize = 6
-  let pagesNumbers
-
 
 
   useEffect(() => {
@@ -107,10 +101,6 @@ function SearchScreen() {
           `/api/products/search?page=${page}&query=${query}&category=${category}&price=${price}&rating=${rating}&order=${order}`
         );
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
-        let endIndex = pageSize * currentPage
-        let startIndex = endIndex - pageSize
-        let allShownProducts = data.slice(startIndex, endIndex)
-        setPaginatedProducts(allShownProducts)
       } catch (err) {
         dispatch({
           type: 'FETCH_FAIL',
@@ -121,19 +111,7 @@ function SearchScreen() {
     fetchData();
   }, [category, error, order, page, price, query, rating]);
   
-    useEffect(() => {
-    let endIndex = pageSize * currentPage
-    let startIndex = endIndex - pageSize
-    let allShownProducts = products.slice(startIndex, endIndex)
-    setPaginatedProducts(allShownProducts)
-  }, [currentPage])
-
-  const changePaginate = (newPage) => {
-    setCurrentPage(newPage)
-  }
   
-    const pagesCount = Math.ceil(products.length / pageSize)
-  pagesNumbers = Array.from(Array(pagesCount).keys())
 
   const [categories, setCategories] = useState([]);
 
@@ -320,7 +298,7 @@ function SearchScreen() {
             {
               loading ? <Preload /> :
                 error ? (<h3>{error}</h3>) : (
-                  paginatedProducts.map(product => (
+                  products.map(product => (
                     <ProductStyle type={listType} {...product} key={product._id} />)
                   ))
             }
