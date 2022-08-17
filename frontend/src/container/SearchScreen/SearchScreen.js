@@ -279,7 +279,7 @@ function SearchScreen() {
               <FaThList onClick={() => setListType(false)} />
             </div>
             <div className="number-of-products">
-              9 محصول از 30 تا
+               {products.length} محصول
             </div>
             <select
               className="sort-products"
