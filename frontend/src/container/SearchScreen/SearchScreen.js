@@ -89,6 +89,7 @@ function SearchScreen() {
 
   const [{ loading, error, products, pages, countProducts }, dispatch] =
     useReducer(reducer, {
+      products:[],
       loading: true,
       error: '',
     });
