@@ -38,7 +38,6 @@ function ProductsScreen() {
     error: ''
   })
 
-let productLength;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,7 +46,6 @@ let productLength;
         const result = await axios.get('/api/products')
         dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
 //         let newData = result.data.reverse(result.data)
-        productLength = result.data.length
         let endIndex = pageSize * currentPage
         let startIndex = endIndex - pageSize
         let allShownProducts = result.data.slice(startIndex, endIndex)
@@ -91,7 +89,7 @@ let productLength;
               <FaThList onClick={() => setListType(false)} />
             </div>
             <div className="number-of-products">
-              6 محصول از {productLength} تا
+              6 محصول از {products.length} تا
             </div>
             
           </div>
